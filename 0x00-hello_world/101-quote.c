@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
-* main - Entry point
+* main - Entry point main Description of what the main function does
 **
-Return: Always 1 (Success)
+Return: always 1 (Success)
 */
 int main(void)
 {
