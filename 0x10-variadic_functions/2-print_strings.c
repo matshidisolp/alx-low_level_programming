@@ -9,30 +9,31 @@
  * @...: A variable number of strings to be printed.
  *
  * Description: If separator is NULL, it is not printed.
- *              If one of the strings if NULL, (nil) is printed instead.
+ *		If one of the strings if NULL, (nil) is printed instead.
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	va_list strings;
+	unsigned int i = 0;
 	char *str;
-	unsigned int index;
+	va_list ptr_str;
 
-	va_start(strings, n);
-
-	for (index = 0; index < n; index++)
+	va_start(ptr_str, n);
+	for (i = 0; i < n; i++)
 	{
-		str = va_arg(strings, char *);
-
+		str = va_arg(ptr_str, char *);
 		if (str == NULL)
-			printf("(nil)");
+		{
+			printf("nil");
+		}
 		else
+		{
 			printf("%s", str);
-
-		if (index != (n - 1) && separator != NULL)
+		}
+		if (i != (n - 1) && separator != NULL)
+		{
 			printf("%s", separator);
+		}
 	}
-
+	va_end(ptr_str);
 	printf("\n");
-
-	va_end(strings);
 }
