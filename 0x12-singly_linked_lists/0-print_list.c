@@ -18,7 +18,10 @@ size_t print_list(const list_t *h)
 			a += a;
 		}
 		else
-			printf("[%u] %s\n", h->len, h->str);
+			if (h->str[0] == '%')
+				printf("[-1] %s\n", h->str);
+			else
+				printf("[%u] %s\n", h->len, h->str);
 		h = h->next;
 		a++;
 	}
