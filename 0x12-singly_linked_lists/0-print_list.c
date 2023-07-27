@@ -8,22 +8,19 @@
  */
 size_t print_list(const list_t *h)
 {
-	size_t count = 0;
+	unsigned int count = 0;
+	const list_t *temp;
 
-	if (!h)
-	{
-		printf("[0] (nil)\n");
-		return (0);
-	}
+	temp = h;
 
-	for (; h; h = h->next, count++)
+	while (temp != 0)
 	{
-		if (!h->str)
+		if (temp->str == NULL)
 			printf("[0] (nil)\n");
-		else if (h->str[0] == '%')
-			printf("[-1] %s\n", h->str);
 		else
-			printf("[%u] %s\n", h->len, h->str);
+			printf("[%u] %s\n", temp->len, temp->str);
+		count++;
+		temp = temp->next;
 	}
 	return (count);
 }
