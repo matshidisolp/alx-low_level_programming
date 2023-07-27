@@ -6,6 +6,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ *struct list_s - singly linked list node structure
+ *@str: character pointer of string data in node
+ *@len: length of the string data
+ *@next: pointer to the next node in the linked list
+ */
 typedef struct list_s
 {
 	char *str;
