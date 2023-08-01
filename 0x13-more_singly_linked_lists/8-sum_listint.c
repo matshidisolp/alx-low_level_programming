@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
- * sum_listint - calculates the sum of all the data in a listint_t list
- * @head: first node in the linked list
+ *sum_listint - calculates the sum of all the data in list
+ *@head: first node in the linked list
  *
- * Return: resulting sum
+ *Return: the sum (total of n data of nodes)
  */
 int sum_listint(listint_t *head)
 {
