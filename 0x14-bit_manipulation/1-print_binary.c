@@ -15,12 +15,12 @@ void print_binary(unsigned long int n)
 
 		if (current & 1)
 		{
-			printf("1");
+			_putchar("1");
 			count++;
 		}
 		else if (count)
-			printf("0");
+			_putchar("0");
 	}
 	if (!count)
-		peintf("0");
+		_puctahr("0");
 }

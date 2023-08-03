@@ -9,5 +9,7 @@
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	char binary_char = (c == '0' || c == '1') ? c : '?';
+
+	return (write(1, &binary_char, 1));
 }
