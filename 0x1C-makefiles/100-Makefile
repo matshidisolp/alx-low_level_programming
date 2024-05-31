@@ -1,0 +1,33 @@
+# 100-Makefile
+
+# variables
+CC = gcc
+SRC = main.c school.c
+OBJ = main.o school.o
+NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# rule: all
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+main.o: main.c m.h
+	$(CC) -c main.c $(CFLAGS)
+
+school.o: school.c m.h
+	$(CC) -c school.c $(CFLAGS)
+
+clean:
+	$(RM) *~ \#* $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
+
+.PHONY: all clean oclean fclean re
+
