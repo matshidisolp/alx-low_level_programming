@@ -1,0 +1,10 @@
+# 1-Makefile
+
+# variables
+CC = gcc
+SRC = main.c school.c
+
+# rule: all
+all:
+	$(CC) $(SRC) -o school
+
